@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_login">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.bloodsugarsmartrecord.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.bloodsugarsmartrecord.ui.dashboard.DashboardFragment"
+        android:label="@string/title_record"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.bloodsugarsmartrecord.ui.login.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/LoginToRegisterAction"
+            app:destination="@id/navigation_register" />
+        <action
+            android:id="@+id/LoginToHomeAction"
+            app:destination="@id/navigation_home">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.example.bloodsugarsmartrecord.ui.register.RegisterFragment"
+        android:label="@string/title_register"
+        tools:layout="@layout/fragment_register" />
+</navigation>
